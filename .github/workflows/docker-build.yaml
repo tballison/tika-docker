@@ -91,7 +91,7 @@ jobs:
               TIKA_VERSION="${{ inputs.TIKA_VERSION }}"
           else
              IMAGE_VERSION=$(git describe --tags --abbrev=0)
-             TIKA_VERSION=$(echo ${IMAGE_VERSION} | sed 's/\(.*\)..\d*$/\1/')
+             TIKA_VERSION=$(echo ${IMAGE_VERSION} | sed -r 's/^(.*).[0-9]+(-beta\d*)?$/\1/')
           fi
           echo "Building Tika version ${TIKA_VERSION}"
           echo "TIKA_VERSION=${TIKA_VERSION}" >> $GITHUB_ENV
