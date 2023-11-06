@@ -22,7 +22,7 @@ on:
       TIKA_VERSION:
         description: The Tika version to build the image from
         type: string
-        default: 2.8.0
+        default: 2.9.1
       PUSH_IMAGE:
         description: Push image to registry
         type: boolean
